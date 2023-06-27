@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.newid.openapi.dao.RtChannelMapper">
+	
+	<select id="selectAll" resultType="RtChannelDto">
+		SELECT channel_id, 
+			   channel_name,
+			   rt_cp_id,
+			   channel_id_origin,
+			   channel_id_origin_sub,
+			   target_platform_origin,
+			   target_info,
+			   main_company_id,
+			   sub_company_id,
+			   created_at,
+			   updated_at
+		FROM partner_rt_channel
+	</select>
+
+</mapper>

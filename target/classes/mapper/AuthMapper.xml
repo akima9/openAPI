@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.newid.openapi.dao.AuthMapper">
+	
+	<select id="select" parameterType="map" resultType="AuthDto">
+		SELECT api_seed, 
+			   api_key,
+			   partner,
+			   api_secret,
+			   api_desc,
+			   active,
+			   permission_key,
+			   permission_info,
+			   created_at,
+			   updated_at
+		FROM partner_api
+		WHERE api_key = #{api_key} AND api_secret = #{secret}
+	</select>
+
+</mapper>

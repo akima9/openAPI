@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.newid.openapi.dao.ChannelMapper">
+	
+	<select id="select" parameterType="String" resultType="ChannelDto">
+		SELECT channel_id, 
+			   channel_name,
+			   channel_type,
+			   target_info,
+			   advanced_info,
+			   main_company_id,
+			   sub_company_id,
+			   created_at,
+			   updated_at
+		FROM partner_channel
+		WHERE channel_id = #{channel_id}
+	</select>
+	
+	<select id="selectAll" resultType="ChannelDto">
+		SELECT channel_id, 
+			   channel_name,
+			   channel_type,
+			   target_info,
+			   advanced_info,
+			   main_company_id,
+			   sub_company_id,
+			   created_at,
+			   updated_at
+		FROM partner_channel
+	</select>
+
+</mapper>
